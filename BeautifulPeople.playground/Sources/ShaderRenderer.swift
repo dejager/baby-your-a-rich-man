@@ -66,7 +66,7 @@ extension ShaderRenderer: MTKViewDelegate {
       inTexture = nil
     }
 
-    var threadsPerThreadgroup: MTLSize = MTLSize(width: 16, height: 16, depth: 1)
+    let threadsPerThreadgroup: MTLSize = MTLSize(width: 16, height: 16, depth: 1)
     var threadgroupCount: MTLSize {
       let width = Int(ceilf(Float(view.frame.width) / Float(threadsPerThreadgroup.width)))
       let height = Int(ceilf(Float(view.frame.height) / Float(threadsPerThreadgroup.height)))
